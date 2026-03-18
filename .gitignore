@@ -1,0 +1,63 @@
+﻿# Node
+node_modules/
+.dist/
+dist/
+.vite/
+
+# Java / Maven
+/target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+hs_err_pid*
+
+# IDE
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env & secrets
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.jks
+*.keystore
+
+# Logs
+logs/
+*.log
+
+# Runtime / uploads / temp
+uploads/
+/tmp/
+*.tmp
+
+# Test reports
+**/surefire-reports/
+**/failsafe-reports/
+coverage/
+
+# Local config overrides
+application-local.yml
+application-dev.yml
+
+# AI provider configs
+ai-config.json
+
+# MCP / tools local state
+.mcp/
+
+# Lockfiles (if you prefer to commit, remove these)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock

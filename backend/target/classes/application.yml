@@ -1,0 +1,21 @@
+﻿server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: ai-interview-backend
+  mvc:
+    problemdetails:
+      enabled: false
+
+ai:
+  provider: mock
+  apiKey: ${AI_API_KEY:}
+  endpoint: ${AI_ENDPOINT:}
+
+logging:
+  level:
+    root: INFO
+    com.company.aiinterview: DEBUG
