@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "ai-interview-frontend",
   "version": "0.1.0",
   "private": true,
@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "axios": "^1.7.7",
+    "dotenv": "^17.3.1",
+    "drizzle-orm": "^0.45.1",
     "element-plus": "^2.8.4",
+    "pg": "^8.20.0",
     "pinia": "^2.2.2",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5"

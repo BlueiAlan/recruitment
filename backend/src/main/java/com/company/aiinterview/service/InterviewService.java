@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.service;
+package com.company.aiinterview.service;
 
 import com.company.aiinterview.domain.dto.AnswerRequest;
 import com.company.aiinterview.domain.dto.InterviewStartRequest;

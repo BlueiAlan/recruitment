@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.ai;
+package com.company.aiinterview.ai;
 
 public interface AiClient {
     String generateQuestionsJson(String resumeText, String jdText);

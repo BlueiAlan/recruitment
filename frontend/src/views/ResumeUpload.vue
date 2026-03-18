@@ -13,7 +13,7 @@
       <el-divider>或者直接粘贴简历文本</el-divider>
       <el-input v-model="resumeText" type="textarea" :rows="8" />
       <div class="actions">
-        <el-button type="primary" @click="submit">下一步</el-button>
+        <el-button type="primary" :loading="loading" @click="submit">下一步</el-button>
       </div>
     </el-card>
   </div>
@@ -22,6 +22,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
 import { uploadResume, saveResumeText } from '../api/resume'
 import { useInterviewStore } from '../store'
 
@@ -29,20 +30,33 @@ const router = useRouter()
 const store = useInterviewStore()
 const fileRef = ref(null)
 const resumeText = ref('')
+const loading = ref(false)
 
 function onFileChange(file) {
   fileRef.value = file.raw
 }
 
 async function submit() {
-  let res
-  if (fileRef.value) {
-    res = await uploadResume(fileRef.value)
-  } else {
-    res = await saveResumeText(resumeText.value)
+  if (!fileRef.value && (!resumeText.value || !resumeText.value.trim())) {
+    ElMessage.warning('请上传简历文件或粘贴简历文本')
+    return
   }
-  store.setResumeId(res.data.resumeId)
-  router.push('/jd')
+  loading.value = true
+  try {
+    let res
+    if (fileRef.value) {
+      res = await uploadResume(fileRef.value)
+    } else {
+      res = await saveResumeText(resumeText.value.trim())
+    }
+    store.setResumeId(res.data.resumeId)
+    ElMessage.success('简历已保存')
+    router.push('/jd')
+  } catch (e) {
+    ElMessage.error(e?.message || '简历保存失败，请重试')
+  } finally {
+    loading.value = false
+  }
 }
 </script>
 

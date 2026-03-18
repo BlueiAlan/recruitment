@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.domain.entity;
+package com.company.aiinterview.domain.entity;
 
 import lombok.Data;
 

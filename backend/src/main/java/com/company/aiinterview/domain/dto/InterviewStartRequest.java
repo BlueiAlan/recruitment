@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.domain.dto;
+package com.company.aiinterview.domain.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;

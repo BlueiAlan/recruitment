@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.util;
+package com.company.aiinterview.util;
 
 import java.util.UUID;
 

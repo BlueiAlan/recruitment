@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.domain.vo;
+package com.company.aiinterview.domain.vo;
 
 import lombok.Data;
 

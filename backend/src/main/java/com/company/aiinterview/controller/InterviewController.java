@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.controller;
+package com.company.aiinterview.controller;
 
 import com.company.aiinterview.common.Result;
 import com.company.aiinterview.domain.dto.AnswerRequest;
@@ -30,7 +30,7 @@ public class InterviewController {
     }
 
     @GetMapping("/result")
-    public Result<InterviewResultResponse> result(@RequestParam String sessionId) {
+    public Result<InterviewResultResponse> result(@RequestParam("sessionId") String sessionId) {
         return Result.ok(interviewService.result(sessionId));
     }
 }

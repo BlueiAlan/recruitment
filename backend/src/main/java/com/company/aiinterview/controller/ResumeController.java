@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.controller;
+package com.company.aiinterview.controller;
 
 import com.company.aiinterview.common.Result;
 import com.company.aiinterview.domain.dto.ResumeTextRequest;

@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.service;
+package com.company.aiinterview.service;
 
 import com.company.aiinterview.domain.entity.Resume;
 import org.springframework.web.multipart.MultipartFile;

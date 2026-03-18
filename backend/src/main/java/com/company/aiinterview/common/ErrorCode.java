@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.common;
+package com.company.aiinterview.common;
 
 public enum ErrorCode {
     BAD_REQUEST(40001, "bad request"),

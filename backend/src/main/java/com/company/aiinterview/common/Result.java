@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.common;
+package com.company.aiinterview.common;
 
 import lombok.Data;
 

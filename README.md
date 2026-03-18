@@ -31,7 +31,7 @@ Recruitment/
 后端：
 ```
 cd backend
-mvn spring-boot:run
+mvn spring-boot:run -Dspring-boot.run.profiles=local
 ```
 
 前端：
@@ -43,8 +43,16 @@ npm run dev
 
 ## 5. 环境变量与安全
 敏感信息禁止硬编码，统一通过环境变量注入：
+- `AI_PROVIDER`（`openai` 或 `mock`）
 - `AI_API_KEY`
-- `AI_ENDPOINT`
+- `AI_ENDPOINT`（OpenAI 兼容的 Chat Completions 接口地址）
+- `AI_MODEL`
+- `AI_TIMEOUT_MS`（可选，默认 10000）
+
+本地开发建议使用 `backend/src/main/resources/application-local.yml` 写入密钥，
+并通过 `-Dspring-boot.run.profiles=local` 启动。本文件已在 `.gitignore` 中忽略。
+
+如需不接入真实供应商，可设置 `AI_PROVIDER=mock` 使用内置模拟客户端。
 
 如需本地配置，可使用 `.env` 文件，但禁止提交到远程仓库。
 
@@ -62,8 +70,14 @@ npm run dev
 
 ## 8. 说明
 本项目为 MVP 样例，后续可扩展：
-- 替换真实 AI 供应商
 - 引入 Redis 缓存
 - 接入数据库持久化
 - 接入 RBAC 权限控制
+- 使用 PostgreSQL + Drizzle ORM（参考 `database/drizzle/schema.ts` 与 `database/drizzle/0001_init.sql`）
+
+当前版本使用内存存储简历与面试会话，使用流程建议为：
+- 先在“上传简历”页面完成上传/粘贴，再进入 JD 页面点击“开始面试”。
+- 前端会持久化 `resumeId`，但后端重启后内存数据会清空，需要重新上传简历后再开始面试。
+
+数据库设计说明见：`database/README.md`。
 

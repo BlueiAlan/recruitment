@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.exception;
+package com.company.aiinterview.exception;
 
 import com.company.aiinterview.common.ErrorCode;
 import com.company.aiinterview.common.Result;

@@ -1,10 +1,7 @@
-﻿package com.company.aiinterview.ai;
-
-import org.springframework.stereotype.Component;
+package com.company.aiinterview.ai;
 
 import java.util.List;
 
-@Component
 public class MockAiClient implements AiClient {
     @Override
     public String generateQuestionsJson(String resumeText, String jdText) {

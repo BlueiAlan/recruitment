@@ -24,3 +24,6 @@ This is an AI-powered mock interview system.
 
 ## Documentation Sync
 - When generating or modifying features, update relevant sections in `README.md` and `README_EN.md` (e.g., change the `## 8. 说明` extension list when replacing the AI provider).
+
+## Verification
+- Every time new code is generated, verify the frontend and backend can run successfully and the end-to-end integration works.

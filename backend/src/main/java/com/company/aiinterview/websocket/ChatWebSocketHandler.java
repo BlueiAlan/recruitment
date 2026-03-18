@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.websocket;
+package com.company.aiinterview.websocket;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

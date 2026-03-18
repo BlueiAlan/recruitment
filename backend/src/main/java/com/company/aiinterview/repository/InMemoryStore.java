@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.repository;
+package com.company.aiinterview.repository;
 
 import com.company.aiinterview.domain.entity.InterviewSession;
 import com.company.aiinterview.domain.entity.Resume;

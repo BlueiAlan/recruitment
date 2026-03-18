@@ -1,4 +1,4 @@
-﻿package com.company.aiinterview.config;
+package com.company.aiinterview.config;
 
 import com.company.aiinterview.websocket.ChatWebSocketHandler;
 import org.springframework.context.annotation.Configuration;
