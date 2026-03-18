@@ -21,3 +21,6 @@ This is an AI-powered mock interview system.
 ## AI Behavior
 - Always output JSON for AI results
 - Keep prompts concise (low token usage)
+
+## Documentation Sync
+- When generating or modifying features, update relevant sections in `README.md` and `README_EN.md` (e.g., change the `## 8. 说明` extension list when replacing the AI provider).
