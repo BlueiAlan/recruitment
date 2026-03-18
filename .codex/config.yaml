@@ -1,0 +1,22 @@
+﻿model: gpt-5.2-codex
+
+context:
+  include:
+    - "backend/src/**/*"
+    - "frontend/src/**/*"
+    - "CLAUDE.md"
+    - "AGENTS.md"
+    - ".codex/rules/*.md"
+    - ".codex/context/*.md"
+  exclude:
+    - "node_modules/**"
+    - "dist/**"
+
+skills:
+  directory: .codex/skills
+  enabled:
+    - interview-question
+    - answer-evaluation
+    - backend-generator
+
+approval_mode: suggest
