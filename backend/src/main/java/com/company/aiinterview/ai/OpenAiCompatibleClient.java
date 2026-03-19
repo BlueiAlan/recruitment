@@ -23,18 +23,31 @@ public class OpenAiCompatibleClient implements AiClient {
     }
 
     @Override
-    public String generateQuestionsJson(String resumeText, String jdText) {
-        String prompt = PromptTemplates.QUESTION_PROMPT
+    public String generateOpeningQuestionJson(String resumeText, String jdText) {
+        String prompt = PromptTemplates.OPENING_QUESTION_PROMPT
                 .replace("{{resume}}", safe(resumeText))
                 .replace("{{jd}}", safe(jdText));
         return callModel(prompt);
     }
 
     @Override
-    public String scoreAnswerJson(String question, String answer) {
-        String prompt = PromptTemplates.SCORE_PROMPT
+    public String evaluateAnswerJson(String resumeText, String jdText, String historyText, String question, String answer, boolean allowNextQuestion) {
+        String prompt = PromptTemplates.EVALUATE_AND_NEXT_PROMPT
+                .replace("{{resume}}", safe(resumeText))
+                .replace("{{jd}}", safe(jdText))
+                .replace("{{history}}", safe(historyText))
                 .replace("{{question}}", safe(question))
-                .replace("{{answer}}", safe(answer));
+                .replace("{{answer}}", safe(answer))
+                .replace("{{allowNext}}", Boolean.toString(allowNextQuestion));
+        return callModel(prompt);
+    }
+
+    @Override
+    public String summarizeJson(String resumeText, String jdText, String historyText) {
+        String prompt = PromptTemplates.SUMMARY_PROMPT
+                .replace("{{resume}}", safe(resumeText))
+                .replace("{{jd}}", safe(jdText))
+                .replace("{{history}}", safe(historyText));
         return callModel(prompt);
     }
 

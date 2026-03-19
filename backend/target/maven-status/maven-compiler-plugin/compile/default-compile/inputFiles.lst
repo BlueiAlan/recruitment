@@ -13,6 +13,7 @@ D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\c
 D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\domain\vo\AnswerFeedbackVO.java
 D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\domain\vo\QuestionVO.java
 D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\ai\AiProperties.java
+D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\repository\ResumeRepository.java
 D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\domain\dto\ResumeTextRequest.java
 D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\ai\OpenAiCompatibleClient.java
 D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\domain\dto\LoginRequest.java
@@ -22,9 +23,9 @@ D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\e
 D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\service\impl\ResumeServiceImpl.java
 D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\AiInterviewApplication.java
 D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\controller\AuthController.java
+D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\repository\InterviewSessionRepository.java
 D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\domain\vo\InterviewResultResponse.java
 D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\common\Result.java
-D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\repository\InMemoryStore.java
 D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\domain\entity\Answer.java
 D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\ai\PromptTemplates.java
 D:\WorkSpace\project\recruitment\backend\src\main\java\com\company\aiinterview\ai\MockAiClient.java

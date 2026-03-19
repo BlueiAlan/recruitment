@@ -1,11 +1,20 @@
 package com.company.aiinterview.service;
 
-import java.util.List;
-
 public interface AiService {
-    List<String> generateQuestions(String resumeText, String jdText);
+    String generateOpeningQuestion(String resumeText, String jdText);
 
-    AiScore scoreAnswer(String question, String answer);
+    AiTurn evaluateAndGenerateNext(
+            String resumeText,
+            String jdText,
+            String historyText,
+            String question,
+            String answer,
+            boolean allowNextQuestion
+    );
+
+    String summarize(String resumeText, String jdText, String historyText);
 
     record AiScore(int score, String feedback) {}
+
+    record AiTurn(int score, String feedback, boolean shouldEnd, String nextQuestion) {}
 }

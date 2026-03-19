@@ -4,17 +4,29 @@
     context-path: /
 
 spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
   application:
     name: ai-interview-backend
+  datasource:
+    url: ${DATABASE_URL:}
+    username: ${DATABASE_USERNAME:}
+    password: ${DATABASE_PASSWORD:}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: ${DB_POOL_MAX_SIZE:10}
+      minimum-idle: ${DB_POOL_MIN_IDLE:2}
+      connection-timeout: ${DB_CONNECTION_TIMEOUT_MS:10000}
+      validation-timeout: ${DB_VALIDATION_TIMEOUT_MS:5000}
   mvc:
     problemdetails:
       enabled: false
 
 ai:
-  provider: ${AI_PROVIDER:openai}
+  provider: ${AI_PROVIDER:deepseek}
   apiKey: ${AI_API_KEY:}
-  endpoint: ${AI_ENDPOINT:}
-  model: ${AI_MODEL:}
+  endpoint: ${AI_ENDPOINT:https://api.deepseek.com/chat/completions}
+  model: ${AI_MODEL:deepseek-chat}
   timeoutMs: ${AI_TIMEOUT_MS:10000}
 
 logging:

@@ -1,7 +1,9 @@
 package com.company.aiinterview.ai;
 
 public interface AiClient {
-    String generateQuestionsJson(String resumeText, String jdText);
+    String generateOpeningQuestionJson(String resumeText, String jdText);
 
-    String scoreAnswerJson(String question, String answer);
+    String evaluateAnswerJson(String resumeText, String jdText, String historyText, String question, String answer, boolean allowNextQuestion);
+
+    String summarizeJson(String resumeText, String jdText, String historyText);
 }

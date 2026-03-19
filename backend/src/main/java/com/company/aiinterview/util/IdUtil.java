@@ -7,6 +7,6 @@ public class IdUtil {
     }
 
     public static String newId() {
-        return UUID.randomUUID().toString().replace("-", "");
+        return UUID.randomUUID().toString();
     }
 }

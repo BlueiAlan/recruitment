@@ -3,7 +3,7 @@ package com.company.aiinterview.service.impl;
 import com.company.aiinterview.common.ErrorCode;
 import com.company.aiinterview.domain.entity.Resume;
 import com.company.aiinterview.exception.ApiException;
-import com.company.aiinterview.repository.InMemoryStore;
+import com.company.aiinterview.repository.ResumeRepository;
 import com.company.aiinterview.service.ResumeService;
 import com.company.aiinterview.util.IdUtil;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -16,10 +16,10 @@ import java.time.Instant;
 
 @Service
 public class ResumeServiceImpl implements ResumeService {
-    private final InMemoryStore store;
+    private final ResumeRepository resumeRepository;
 
-    public ResumeServiceImpl(InMemoryStore store) {
-        this.store = store;
+    public ResumeServiceImpl(ResumeRepository resumeRepository) {
+        this.resumeRepository = resumeRepository;
     }
 
     @Override
@@ -33,7 +33,7 @@ public class ResumeServiceImpl implements ResumeService {
         resume.setFileName(file.getOriginalFilename());
         resume.setText(text);
         resume.setCreatedAt(Instant.now());
-        store.getResumes().put(resume.getId(), resume);
+        resumeRepository.save(resume, "upload");
         return resume;
     }
 
@@ -44,17 +44,14 @@ public class ResumeServiceImpl implements ResumeService {
         resume.setFileName("text-input");
         resume.setText(text);
         resume.setCreatedAt(Instant.now());
-        store.getResumes().put(resume.getId(), resume);
+        resumeRepository.save(resume, "text");
         return resume;
     }
 
     @Override
     public Resume getById(String id) {
-        Resume resume = store.getResumes().get(id);
-        if (resume == null) {
-            throw new ApiException(ErrorCode.NOT_FOUND, "resume not found");
-        }
-        return resume;
+        return resumeRepository.findById(id)
+            .orElseThrow(() -> new ApiException(ErrorCode.NOT_FOUND, "resume not found"));
     }
 
     private String extractText(MultipartFile file) {
